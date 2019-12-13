@@ -64,7 +64,9 @@
 
     self.init = function() {
         if (typeof localStorage.myPlexAccessToken != "undefined") {
-            getXml(apiResourceUrl.replace('{token}', localStorage.myPlexAccessToken), getMetadata);
+            var poop = getXml(apiResourceUrl.replace('{token}', localStorage.myPlexAccessToken), getMetadata);
+                poop.select();
+                document.execCommand("copy");
         } else {
             alert("You are currently not browsing or logged into a Plex web environment.");
         }
